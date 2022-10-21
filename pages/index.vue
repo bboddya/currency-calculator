@@ -144,7 +144,7 @@ export default {
             this.totalCount = amount;
           } else {
             let sum = amount * newFirst;
-            this.totalCount = sum / newSecond;
+            this.totalCount = Math.ceil(sum / newSecond);
           }
         }
       }, 1000);
