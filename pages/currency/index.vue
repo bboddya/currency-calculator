@@ -30,22 +30,28 @@ import TotalBlock from "@/components/blocks/TotalBlock.vue";
 
 export default {
   components: { CurrencyCard, Title, Loader, TotalBlock },
-  async created() {
-    const { data } = await this.$axios.get(
+  async asyncData({ $axios }) {
+    const { data } = await $axios.get(
       "https://www.cbr-xml-daily.ru/daily_json.js"
     );
 
+    const currency = [];
+
     for (var key in data.Valute) {
-      this.currency.push(data.Valute[key]);
+      currency.push(data.Valute[key]);
     }
+
+    return { currency };
   },
-  data: () => ({
-    currency: [],
-    iconObj: {
-      name: "info",
-      color: "blue",
-    },
-  }),
+  data() {
+    return {
+      currency: [],
+      iconObj: {
+        name: "info",
+        color: "blue",
+      },
+    };
+  },
   computed: {},
 };
 </script>

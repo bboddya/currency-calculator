@@ -44,59 +44,61 @@ export default {
     Footer,
     TotalBlock,
   },
-  data: () => ({
-    inputs: [
-      {
-        title: "Валюта 1",
-        placeholder: "Введите название или код",
-        value: "",
-        name: "first",
-        id: 1,
-        type: "text",
-      },
-      {
-        title: "Валюта 2",
-        placeholder: "Введите название или код",
-        value: "",
-        name: "second",
-        id: 2,
-        type: "text",
-      },
-      {
-        title: "Количество",
-        placeholder: "Введите число",
-        value: "",
-        name: "amount",
-        id: 3,
-        type: "number",
-      },
-    ],
-    info: {
-      title:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor:",
-      list: [
-        "incididunt ut labore et dolore magna aliqua",
-        "incididunt ut labore et",
-        "incididunt ut labore et dolore",
-        "labore et dolore",
-        "incididunt ut",
-        "incididunt ut labore et dolore",
-        "incididunt ut labore",
+  data() {
+    return {
+      inputs: [
+        {
+          title: "Валюта 1",
+          placeholder: "Введите название или код",
+          value: "",
+          name: "first",
+          id: 1,
+          type: "text",
+        },
+        {
+          title: "Валюта 2",
+          placeholder: "Введите название или код",
+          value: "",
+          name: "second",
+          id: 2,
+          type: "text",
+        },
+        {
+          title: "Количество",
+          placeholder: "Введите число",
+          value: "",
+          name: "amount",
+          id: 3,
+          type: "number",
+        },
       ],
-      images: ["img-1.jpg", "img-2.jpg", "img-3.jpg", "img-4.png"],
-    },
-    iconObj: {
-      name: "info",
-      color: "red",
-    },
-    form: {
-      first: "",
-      second: "",
-      amount: "",
-    },
-    totalCount: "",
-    _timerId: null,
-  }),
+      info: {
+        title:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor:",
+        list: [
+          "incididunt ut labore et dolore magna aliqua",
+          "incididunt ut labore et",
+          "incididunt ut labore et dolore",
+          "labore et dolore",
+          "incididunt ut",
+          "incididunt ut labore et dolore",
+          "incididunt ut labore",
+        ],
+        images: ["img-1.jpg", "img-2.jpg", "img-3.jpg", "img-4.png"],
+      },
+      iconObj: {
+        name: "info",
+        color: "red",
+      },
+      form: {
+        first: "",
+        second: "",
+        amount: "",
+      },
+      totalCount: "",
+      _timerId: null,
+    };
+  },
   methods: {
     updateForm({ name, value }) {
       this.form[name] = value;
