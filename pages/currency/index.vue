@@ -31,9 +31,7 @@ import TotalBlock from "@/components/blocks/TotalBlock.vue";
 export default {
   components: { CurrencyCard, Title, Loader, TotalBlock },
   async asyncData({ $axios }) {
-    const { data } = await $axios.get(
-      "https://www.cbr-xml-daily.ru/daily_json.js"
-    );
+    const { data } = await $axios.get("/api");
 
     const currency = [];
 

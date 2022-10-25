@@ -110,9 +110,7 @@ export default {
         let amount = +this.form.amount.toLowerCase().trim();
 
         if (first !== "" && second !== "" && amount !== 0) {
-          const { data } = await this.$axios.get(
-            "https://www.cbr-xml-daily.ru/daily_json.js"
-          );
+          const { data } = await this.$axios.get("/api");
 
           let newFirst = 0;
           let newSecond = 0;
